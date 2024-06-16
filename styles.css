@@ -1,0 +1,39 @@
+/* 
+body{
+    background-image: url(/images/background-image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+    color: #ffffff;
+}
+body::after{
+backdrop-filter: blur(20px);
+} */
+
+.container{
+    text-align: center;
+}
+
+#suggestions-container{
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-evenly;
+    border: 2px solid black;
+}
+
+#strMealThumb{
+    height: 200px;
+    width: 200px;
+}
+
+.suggestion-item{
+    height: 300px;
+    width: 200px;
+}
+
+div{
+    border: 2px solid red;
+    margin: 5px;
+}
