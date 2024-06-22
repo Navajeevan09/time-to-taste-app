@@ -29,36 +29,39 @@ document.addEventListener("DOMContentLoaded", () => {
   function displayMeals(meals) {
     if (meals.length > 0) {
       meals.forEach((meal) => {
-        const mealsElement = `<div class="suggestion-item" data-id="${meal.idMeal}">
+        const mealsElement = `<div class="suggestion-item" >
                                 <img class="strMealThumb" src="${meal.strMealThumb}">
                                 <h5>${meal.strMeal}</h5>
                                 <div class="like-div" data-id="${meal.idMeal}"><i class="fa-solid fa-heart fa-spin-pulse" style="color: #74C0FC;"></i></div>
-                                <div class="meal-info" id="meal-info-btn"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+                                <div class="meal-info-btn" data-id="${meal.idMeal}"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
                                 </div>`;
 
         suggContElement.insertAdjacentHTML("beforeend", mealsElement);
       });
+
+      document.querySelectorAll(".like-div").forEach((likeDiv) => {
+        likeDiv.addEventListener("click", () => {
+          if (likeDiv.classList.contains("liked")) return;
+
+          likeDiv.classList.add("liked");
+          const mealId = likeDiv.getAttribute("data-id");
+          const meal = meals.find((meal) => meal.idMeal === mealId);
+
+          if (meal) {
+            addMealInLocalStorage(meal);
+          }
+        });
+      });
+
+      document.querySelectorAll(".meal-info-btn").forEach((mealInfo) => {
+        mealInfo.addEventListener("click", (event) => {
+          const mealId = event.currentTarget.getAttribute("data-id");
+          window.location.href = `../mealInfo/mealInfo.html?id=${mealId}`;
+        });
+      });
     } else {
       suggContElement.innerHTML = `<div class="no-suggestion-items" ><h4>We couldn't find any items that match your search. Please try again.</h4></div>`;
     }
-
-    document.querySelectorAll(".like-div").forEach((likeDiv) => {
-      likeDiv.addEventListener("click", () => {
-        if (likeDiv.classList.contains("liked")) return;
-
-        likeDiv.classList.add("liked");
-        const mealId = likeDiv.getAttribute("data-id");
-        const meal = meals.find((meal) => meal.idMeal === mealId);
-
-        if (meal) {
-          addMealInLocalStorage(meal);
-        }
-      });
-    });
-
-    document.getElementById("meal-info-btn").addEventListener("click", () => {
-      window.location.href = "mealInfo.html";
-    });
   }
 
   //function for add favourites in local storage
@@ -72,6 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Favourites page navigation
   favouriteBtn.addEventListener("click", () => {
-    window.location.href = "favouriteMealsPage.html";
+    window.location.href = "../favouritesPage/favouriteMealsPage.html";
   });
 });

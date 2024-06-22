@@ -2,10 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function rendorPage() {
     const homePageBtn = document.getElementById("back-to-home-btn");
     const favouriteContainerEl = document.getElementById("favourites-container");
-    //Home page navigation
-    homePageBtn.addEventListener("click", () => {
-      window.location.href = "homePage.html";
-    });
+
     favouriteContainerEl.innerHTML = "";
     const favouriteMeals = JSON.parse(localStorage.getItem("favouriteMeals")) || [];
     if (favouriteMeals.length > 0) {
@@ -37,7 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("favouriteMeals", JSON.stringify(updatedFavMeals));
       rendorPage();
     }
-  }
 
+    //Home page navigation
+    homePageBtn.addEventListener("click", () => {
+      window.location.href = "../homePage/homePage.html";
+    });
+  }
   rendorPage();
 });
