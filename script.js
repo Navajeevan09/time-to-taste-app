@@ -79,6 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Favourites page navigation
   favouriteBtn.addEventListener("click", () => {
-    window.location.href = "/favouritesPage/favouriteMealsPage.html";
+    window.location.href = "favouritesPage/favouriteMealsPage.html";
   });
 });
