@@ -23,13 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
                             <img src="${strMealThumb}"/>
                             </div>
                             <div id="meal-info">
-                            <ul>
-                                <li>${strMeal}</li>
-                                <li>${strMealThumb}</li>
-                                <li>${strInstructions}</li>
-                                <li>${strArea}</li>
-                                <li><a href="${strYoutube}">Video<a></li>
-                            </ul>
+                            <dl>
+                    
+                                <dt>Meal Name</dt>
+                                <dd>${strMeal}</dd>
+                                <dt>Cooking Instructions</dt>
+                                <dd>${strInstructions}</dd>
+                                <dt>Location</dt>
+                                <dd>${strArea}</dd>
+                                
+                            </dl>
+                            <button><a href="${strYoutube}">Video<a></button>
                             </div>`;
 
     mealInfoContainerEl.innerHTML = mealsElement;

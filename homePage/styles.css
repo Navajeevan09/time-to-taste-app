@@ -1,70 +1,68 @@
 
-body{
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(72, 187, 157, 1) 35%, rgba(0, 212, 255, 1) 100%);
-
-    color: #ffffff;
-}
-
-
-.container {
-    text-align: center;
-}
-
-#favourites-container {
+/* Search container */
+#search-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    border: 2px solid black;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
-#suggestions-container {
+#search-input {
+    width: 80%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+
+/* like and info btn */
+#like-info-btn{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    border: 2px solid black;
+    justify-content: space-between;
 }
 
-.strMealThumb {
-    height: 200px;
-    width: 190px;
-}
-
-.suggestion-item {
-    height: 300px;
-    width: 200px;
-}
-
-#header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-#logo-img {
-    height: 50px;
-    width: 50px;
-}
-
-.like-div {
-    height: 30px;
-    width: 30px;
+.like-div,
+.meal-info-btn {
+    cursor: pointer;
+    margin: 0.5rem;
+    width: 27px;
     border-radius: 50%;
-    background-color: rgb(74, 150, 213);
 }
 
-.liked {
-    background-color: red;
+.like-div:hover,
+.meal-info-btn:hover {
+    background-color: #ff6347;
+    color: aqua;
+}
+.like-div.liked  {
+    background-color: #ff6347;
 }
 
 
-#meal-img img{
-    width: 30%;
-    height: auto;
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    #search-input {
+        width: 100%;
+    }
+
+    .suggestion-item {
+        width: calc(50% - 1rem);
+    }
 }
 
+@media only screen and (max-width: 480px) {
+    #header {
+        flex-direction: column;
+        text-align: center;
+    }
 
-div {
-    border: 2px solid red;
-    margin: 5px;
+    #heading {
+        margin: 0.5rem 0;
+    }
+
+    .suggestion-item {
+        width: 100%;
+    }
 }

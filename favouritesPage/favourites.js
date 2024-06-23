@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     favouriteContainerEl.innerHTML = "";
     const favouriteMeals = JSON.parse(localStorage.getItem("favouriteMeals")) || [];
+    
     if (favouriteMeals.length > 0) {
       favouriteMeals.forEach((favouriteMeal) => {
         if (favouriteMeal) {

@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #6599cd;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Heading with logo Titile and fav, home button */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007bff;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+#logo-img {
+    width: 50px;
+    height: 50px;
+}
+
+#heading {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+#favourites-btn, #back-to-home-btn {
+    background-color: #ff6347;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+#favourites-btn:hover, #back-to-home-btn:hover {
+    background-color: #747070;
+}
+
+/* suggestion , fav containers */
+#suggestions-container , #favourites-container{
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.suggestion-item {
+    background-color: #e2f4f4;
+    border: 1px solid #fffcfc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    width: calc(33.333% - 2rem);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.suggestion-item img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.suggestion-item h5 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+/* if no suggestions */
+.no-suggestion-items h4 {
+    text-align: center;
+    color: #555;
+}

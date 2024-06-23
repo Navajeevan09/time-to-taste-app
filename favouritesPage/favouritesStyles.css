@@ -1,0 +1,59 @@
+/* suggestion item */
+.suggestion-item {
+    position: relative;
+}
+
+/* delete btn */
+.delete-div {
+    cursor: pointer;
+    margin-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.delete-div i {
+    color: #ff6347;
+}
+.delete-div i:hover {
+    color: #2a2b2b;
+}
+
+
+/* Responsive Styles */
+@media  only screen and (max-width: 768px) {
+    #back-to-home-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .suggestion-item {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media  only screen and (max-width: 480px) {
+    #header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #heading {
+        margin: 0.5rem 0;
+    }
+
+    #back-to-home-btn {
+        margin-top: 0.5rem;
+    }
+
+    .suggestion-item {
+        width: 100%;
+    }
+}

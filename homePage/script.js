@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchElement = document.getElementById("search-input");
   const suggContElement = document.getElementById("suggestions-container");
   const favouriteBtn = document.getElementById("favourites-btn");
+  
   // Event listener for searching the meal
   searchElement.addEventListener("input", (event) => {
     suggContElement.innerHTML = "";
@@ -27,13 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Display meals in web page
   function displayMeals(meals) {
+    suggContElement.innerHTML = "";
     if (meals.length > 0) {
       meals.forEach((meal) => {
         const mealsElement = `<div class="suggestion-item" >
                                 <img class="strMealThumb" src="${meal.strMealThumb}">
                                 <h5>${meal.strMeal}</h5>
+                                <div id="like-info-btn">
                                 <div class="like-div" data-id="${meal.idMeal}"><i class="fa-solid fa-heart fa-spin-pulse" style="color: #74C0FC;"></i></div>
                                 <div class="meal-info-btn" data-id="${meal.idMeal}"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+                                </div>                 
                                 </div>`;
 
         suggContElement.insertAdjacentHTML("beforeend", mealsElement);
