@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Home page navigation
     homePageBtn.addEventListener("click", () => {
-      window.location.href = "../homePage.html";
+      window.location.href = "../index.html";
     });
   }
   rendorPage();
