@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".meal-info-btn").forEach((mealInfo) => {
         mealInfo.addEventListener("click", (event) => {
           const mealId = event.currentTarget.getAttribute("data-id");
-          window.location.href = `/mealInfo/mealInfo.html?id=${mealId}`;
+          window.location.href = `./mealInfo/mealInfo.html?id=${mealId}`;
         });
       });
     } else {
@@ -79,6 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Favourites page navigation
   favouriteBtn.addEventListener("click", () => {
-    window.location.href = "favouritesPage/favouriteMealsPage.html";
+    window.location.href = "./favouritesPage/favouriteMealsPage.html";
   });
 });
