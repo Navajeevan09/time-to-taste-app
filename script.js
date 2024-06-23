@@ -32,17 +32,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (meals.length > 0) {
       meals.forEach((meal) => {
         const mealsElement = `<div class="suggestion-item" >
-                                <img class="strMealThumb" src="${meal.strMealThumb}">
+                                <img class="strMealThumb meal-info-redirect" data-id="${meal.idMeal}" src="${meal.strMealThumb}">
                                 <h5>${meal.strMeal}</h5>
                                 <div id="like-info-btn">
                                 <div class="like-div" data-id="${meal.idMeal}"><i class="fa-solid fa-heart fa-spin-pulse" style="color: #74C0FC;"></i></div>
-                                <div class="meal-info-btn" data-id="${meal.idMeal}"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+                                <div class="meal-info-btn meal-info-redirect" data-id="${meal.idMeal}"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
                                 </div>                 
                                 </div>`;
 
         suggContElement.insertAdjacentHTML("beforeend", mealsElement);
       });
 
+      // Like button functionality
       document.querySelectorAll(".like-div").forEach((likeDiv) => {
         likeDiv.addEventListener("click", () => {
           if (likeDiv.classList.contains("liked")) return;
@@ -56,8 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       });
-
-      document.querySelectorAll(".meal-info-btn").forEach((mealInfo) => {
+      
+      //Meal Info Page Redirect
+      document.querySelectorAll(".meal-info-redirect").forEach((mealInfo) => {
         mealInfo.addEventListener("click", (event) => {
           const mealId = event.currentTarget.getAttribute("data-id");
           window.location.href = `./mealInfo/mealInfo.html?id=${mealId}`;

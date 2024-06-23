@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       favouriteMeals.forEach((favouriteMeal) => {
         if (favouriteMeal) {
           const mealsElement = `<div class="suggestion-item">
-                                <img class="strMealThumb" src="${favouriteMeal.strMealThumb}">
+                                <img class="strMealThumb meal-info-redirect" data-id="${favouriteMeal.idMeal}" src="${favouriteMeal.strMealThumb}">
                                 <h5>${favouriteMeal.strMeal}</h5>
                                  <div class="delete-div" data-id="${favouriteMeal.idMeal}"><i class="fa-solid fa-trash"></i></div>
                                 </div>`;
@@ -39,6 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
     //Home page navigation
     homePageBtn.addEventListener("click", () => {
       window.location.href = "../index.html";
+    });
+
+    //Meal Info Page Redirect
+    document.querySelectorAll(".meal-info-redirect").forEach((mealInfo) => {
+      mealInfo.addEventListener("click", (event) => {
+        const mealId = event.currentTarget.getAttribute("data-id");
+        window.location.href = `../mealInfo/mealInfo.html?id=${mealId}`;
+      });
     });
   }
   rendorPage();
