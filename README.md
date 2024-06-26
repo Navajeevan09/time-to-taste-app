@@ -67,6 +67,6 @@ git clone https://github.com/Navajeevan09/time-to-taste-app.git
 
 ### JavaScript
 
-- The `script.js` file contains the home page search behaviors and fetching meals from the [Meal API](https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata) based on search, like button, info button and favourites page redirect button functionalities.
+- The `script.js` file contains the home page search behaviors and fetching meals from the [Meal API](https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata) based on search. Also this js file is responsible for like button, info button and favourites page redirect button functionalities.
 - The `favouritesPage\favourites.js` file contains the favourites page functionalities and home page redirect button functionality.
 - The `mealInfo\mealInfo.js` file contains the meal info page functionality like featching particular meal info from [Meal API](https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772) by passing meal id.
