@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Display meal info in meal info page
   function displayMeals(meal) {
     const { strMeal, strMealThumb, strInstructions, strArea, strYoutube } = meal;
     const mealsElement = `<div id="meal-img">
